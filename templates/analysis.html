@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-Time Stock Analysis</title>
+</head>
+<body>
+  <h2>Real-Time Stock Analysis</h2>
+  <!-- Optionally include a form for parameter input -->
+  <form method="POST">
+    <label for="ticker">Ticker:</label>
+    <input type="text" name="ticker" value="AAPL" required>
+    <br>
+    <label for="period">Time Period (e.g., 1d, 5d):</label>
+    <input type="text" name="period" value="1d" required>
+    <br>
+    <label for="interval">Interval (e.g., 1m, 5m):</label>
+    <input type="text" name="interval" value="1m" required>
+    <br>
+    <button type="submit">Analyze</button>
+  </form>
+  <hr>
+  <!-- Display the Plotly graph -->
+  {{ graph_html|safe }}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+</body>
+</html>
