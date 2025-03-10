@@ -7,4 +7,4 @@ numpy==1.23.5
 ta==0.10.3
 plotly==5.14.0
 joblib==1.2.0
-lxml==4.9.2
+lxml==4.5.0
